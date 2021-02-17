@@ -1,0 +1,111 @@
+rina.karnauch 2
+
+
+
+ =============================
+ = File description =
+ =============================
+ SpaceShipFactory.java - a factory class for making all spaceship by the arguments given to the command line.
+ SpaceShip.java - contains the implementation of the abstract class of spaceship.
+ HumanShip.java - contains the implementation of a human spaceship, a sub class of SpaceShip.
+ BasherShip.java - contains the implementation of a basher spaceship, a sub class of SpaceShip.
+ RunnerShip.java - contains the implementation of a runner spaceship, a sub class of SpaceShip.
+ AggressiveShip.java - contains the implementation of an aggrssive spaceship, a sub class of SpaceShip.
+ DrunkardShip.java - contains the implementation of a drunk spaceship, a sub class of SpaceShip.
+ SpecialShip.java - contains the implementation of a special spaceship, a sub class of SpaceShip.
+ Values.java - constance value
+ 
+ =============================
+ = Design =
+ =============================
+ I implemented the Spaceship class as an abstract class- instead of creating a class with a field of "type" i decided to
+ generalize the spaceship as an abstract object and inherit from it the common methods that each spaceship should follow,
+ while each kind of spaceship has its own class, because they handle situations differently and their whole purpose is
+ different.
+ I chose this design because it is similar to how spaceships act like in the real world:
+ there is a general idea of a spaceship, which follows some several common stuff each spaceship does- but there are
+ different kinds of spaceships which have their own purpose, methods, priorities and etc'.
+ Instead of implementing an instance- a contract for the behavior of spaceships, i decided to implement an abstract
+ class because a spaceship kind is like a "father" to all kinds of spaceships- but a spaceship of one kind can't be a
+ different kind of object- only one main abstract "father" class for all spaceships, while if i had chosen an
+ instance type, it would have felt weird because each spaceship could have followed some protocols,
+ while each kind mostly has one stated by our excercise.
+ Also i decided to implement my values class, so it would be easier for me to hold constant information in another
+ stored and clean place all together.
+
+ =============================
+ = Implementation details =
+ =============================
+ In each sub class of spaceship i stored the information in primitive values according to the needs of the subclass and
+ each sub class has the simple fields each spaceship shall hold.
+ The only more complex field is the SpaceShipPhysics which was implemented for us and given to us,
+ where the physical information is hold.
+ In the main abstract class i designed several getters and setters, becaue in the sub classes we can't access
+ private information of the fields, so we could change fields neatly when needed or get them when needed,
+ while keeping a miniaml API still.
+ 
+ =============================
+ = Answers to questions =
+ =============================
+
+ 1) Explain your design:
+ 1.a) What were your considerations?
+ First off all although i had minimal time because of another exams, i decided to take my time considering which
+ class for all spaceships.
+
+ design i shall chose- instance of spaceship or abstract class.
+ My considerations were mainly how i understand the object of "Spaceship" in real life- it felt to me less of a protocal,
+ not a contract binding how the object acts per situations- but as an abstract idea with several kinds with some common
+ fields and ideas, and special singularities to each sub kind of spaceship- therefore i decided to implement an abstract
+ class with 6 more sub classes.
+ 
+ 1.b) What are your design's advantages and disadvantages?
+ disadvantage #1 -Meanwhile coding, i figured out my choice felt intuitive to me, but i could've implemented another sub-abst
+ which each kind would have sub normal classes to it, for example:
+ I could've categorized "AggressiveShip" and "BasherShip" ship as "Attacking Ships" as an abstract idea of them,
+ and "RunnerShip" as a "Survival Ships", and "DrunkShip" and "Special Ship" as "Fun Ships"- so at the future time if i'd
+ like to make the game even better, i could've given the player an option to pick a more specific ship by his needs-
+ playing for fun, for vengeance or just simply- human playing- SO overall this is a disadvantage, i have alot of types of
+ ships in a really general group of "spaceships" while we can specify it more.
+ disadvantage #2 - A lot of pictures on one screen, A bit confusing at start to understand, but it felt more fun to me
+ to make it that way so i enjoy it myself since i am not a big fan of video games.
+ advantage #1 - original and funky.
+ advantage #2 - feels intuitive like in the real world- one kind of "object" has several sub types-
+ spaceship is the abstract idea of the objects, and each spaceship has its own purpose.
+
+ 2) Describe the behavior of the drunkard ship.
+ My drunk ship thinks it knows best- but it is abit confused, as all drunks are.
+ First of all it has 3 "modes"- no shield, shield, and wasted mode- because from time to time drunks stop and need a breath.
+ Each drunk spaceship has its own tolerance for alcohol- it has 2 random fields of angle units and distance units which
+ indicated when to chill down and unattack otherwise "the drunk night will go to hell."
+ Furthermore, the drunk ship wants some attention and comfort- if some other ship is close, it will turn the shield off,
+ because all drunks love some hugs- it shall confused ships for friends, and not enemies.
+ The drunk ship is confused- if it far away, it wants space- so it tries to move farther, in this case it wants to feel
+ alone so it fires so no one will come near thinking it would help.
+ But as all drunks act, the drunk ship is slow- it won't recharge energy each round- it is slow like the mind of a drunk.
+ From time to time it will vomit- fire.
+
+ 3) Describe the behavior of the special ship.
+ Doge has come to help us in our special ship- because who doesn't love doge(the shiba famous dog).
+ Our doge is unbeatable, so cute yet so fierce.
+ First of all, doge is alert and keeps up its protection area- anyone near less then 0.1 unit shall be attacked while action.
+ Second of all- doge can die three times and be resurrected per session without losing, and it has a longer shield life-
+ each third life of a shield the shield turns off if it has been alive.
+ First of all actions, doge checks if shield is on for wasted- if it has been on for four rounds already,
+ its time to let go of the shield.
+ Then, if we again want to put it on and doge is in danger- we shall do it, so he can be shielded and not
+ Now- we check for protection- if a close ship is in our attack radios, if we are not shielded- we shield
+ we fire once, and teleport to get away.
+ Now we are free to act as we want- turn left or right, or accel.
+ Doge's acceleration rate is faster- we move twice as fat, and if we need more protection- even three times more-
+ and now we ready to attack: if we are able to fire, we shot a random needed amount of fire towards the enemy with our
+ special fire functions- we fire several times yet its considered as once because doge is powerful.
+ Ofcourse if we died meanwhile and we are not out of 3 shots, we resurrected ourselves- we teleport
+ ourself powerful again yet death is not recorded- but we are one step closer to a written death.
+ And then ofcourse doge is tired after the session so we charge it up a notch, and go on again.
+
+ 4) Additional comments.
+ I hope the icons are not so much confusing and fun to watch and informative and not offensive, i am
+ creative person yet i tried to make it fun and charming, because video games are not my cup of tea yet making the icons
+ and thinking of it was the mostly fun part of the project.
+ Hope you enjoy!
